@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Íconos de Pac-Papa</title>
+  <style>
+    body { background: #222; color: #eee; font-family: sans-serif; padding: 16px; }
+    canvas { margin: 8px; border-radius: 12px; }
+    a { color: #f4c430; display: block; margin: 4px 8px; }
+  </style>
+</head>
+<body>
+  <p>Íconos de la app, dibujados con el mismo código del juego.</p>
+  <p><button id="guardar">Guardar en la carpeta iconos/</button> <span id="estado"></span>
+    (requiere <code>python servidor.py</code> y abrir esta página en <code>localhost</code>)</p>
+  <div id="salida"></div>
+
+  <script src="../js/constantes.js"></script>
+  <script src="../js/util.js"></script>
+  <script src="../js/render/items.js"></script>
+  <script src="../js/render/personajes.js"></script>
+  <script>
+    // El dibujo ocupa el 70 % central: sirve también como ícono "maskable".
+    function dibujarIcono(tam) {
+      const c = document.createElement('canvas');
+      c.width = c.height = tam;
+      const ctx = c.getContext('2d');
+      const fondo = ctx.createRadialGradient(tam * 0.45, tam * 0.4, tam * 0.05, tam / 2, tam / 2, tam * 0.75);
+      fondo.addColorStop(0, '#5a3d24');
+      fondo.addColorStop(1, '#120c08');
+      ctx.fillStyle = fondo;
+      ctx.fillRect(0, 0, tam, tam);
+
+      const k = tam / 100;
+      ctx.scale(k, k);
+      PP.dibujarHojuela(ctx, 72, 58, 11, 4);
+      PP.dibujarHojuela(ctx, 83, 58, 23, 3.5);
+      PP.dibujarPacPapa(ctx, 42, 58, { dir: PP.DIR.RIGHT, mirada: 1, boca: 0.62, radio: 23 });
+      return c;
+    }
+
+    const salida = document.getElementById('salida');
+    PP.iconos = {};
+    for (const tam of [192, 512]) {
+      const c = dibujarIcono(tam);
+      PP.iconos[tam] = c.toDataURL('image/png');
+      salida.appendChild(c);
+      const a = document.createElement('a');
+      a.href = PP.iconos[tam];
+      a.download = `icono-${tam}.png`;
+      a.textContent = `Descargar icono-${tam}.png`;
+      salida.appendChild(a);
+    }
+
+    PP.guardarIconos = async function () {
+      const estado = document.getElementById('estado');
+      try {
+        for (const tam of [192, 512]) {
+          const png = await (await fetch(PP.iconos[tam])).blob();
+          const r = await fetch(`../iconos/icono-${tam}.png`, { method: 'PUT', body: png });
+          if (!r.ok) throw new Error(`icono-${tam}: ${r.status}`);
+        }
+        estado.textContent = 'Guardados.';
+      } catch (e) {
+        estado.textContent = 'No se pudo guardar: ' + e.message;
+      }
+    };
+    document.getElementById('guardar').addEventListener('click', PP.guardarIconos);
+  </script>
+</body>
+</html>

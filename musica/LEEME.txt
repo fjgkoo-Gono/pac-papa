@@ -1,0 +1,22 @@
+MÚSICA DE PAC-PAPA
+==================
+
+Copia aquí tus canciones (por ejemplo, de Los Mirlos) en formato MP3,
+con estos nombres exactos:
+
+  inicio.mp3      Suena al empezar la partida, durante el "¡LISTO!".
+                  Se corta suavemente a los 4 segundos.
+  juego.mp3       Suena en bucle mientras juegas. Se acelera un poco
+                  cuando quedan pocas hojuelas.
+  asustado.mp3    Suena en bucle mientras los fantasmas están asustados.
+  intermedio.mp3  Para los intermedios (escenas entre niveles).
+
+Puedes poner solo algunos: los que falten se reemplazan por la música
+original estilo cumbia amazónica que trae el juego.
+
+Notas:
+- La música de archivos solo funciona con el servidor
+  (python servidor.py), no abriendo index.html con doble clic.
+- Por derechos de autor, estas canciones no se incluyen en el proyecto.
+- Mientras un archivo no exista, la consola del navegador mostrará un
+  aviso 404 al buscarlo. Es normal.

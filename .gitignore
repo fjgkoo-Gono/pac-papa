@@ -1,0 +1,5 @@
+# Música propia (derechos de autor): se usa en local, no se publica.
+musica/*.mp3
+
+# Configuración local del editor y de Claude.
+.claude/

@@ -1,0 +1,26 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #0d0907;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#escenario {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  /* Respeta el notch y las esquinas redondeadas del celular. */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#juego {
+  display: block;
+}
