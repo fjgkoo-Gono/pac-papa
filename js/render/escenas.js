@@ -1,11 +1,11 @@
 'use strict';
 // Pantalla de título e intermedios (escenas cómicas entre niveles).
 //
-//  Intermedio 1 (tras el nivel 2): Fuego persigue a Pac-Papa; vuelve
+//  Intermedio 1 (tras el nivel 2): Golpe de Calor persigue a Pac-Papa; vuelve
 //    asustado, perseguido por un Pac-Papa gigante.
-//  Intermedio 2 (tras el nivel 5): Fuego pasa bajo la lluvia de El Niño
+//  Intermedio 2 (tras el nivel 5): Golpe de Calor pasa bajo la lluvia de El Niño
 //    y se apaga a medias; huye chiquito.
-//  Intermedio 3 (tras los niveles 9, 13 y 17): Fuego, convertido en una
+//  Intermedio 3 (tras los niveles 9, 13 y 17): Golpe de Calor, convertido en una
 //    brasita humeante, cruza la pantalla con El Niño lloviéndole encima.
 (function (PP) {
   const D = PP.DIR;
@@ -24,7 +24,7 @@
   // ---------- Título ----------
 
   const PERSONAJES = [
-    { id: 'fuego', nombre: 'FUEGO', apodo: 'te persigue sin descanso', color: '#ff6a2a' },
+    { id: 'fuego', nombre: 'GOLPE DE CALOR', apodo: 'te persigue sin descanso', color: '#ff6a2a' },
     { id: 'nino', nombre: 'EL NIÑO', apodo: 'llega adelantado', color: '#8fb6e0' },
     { id: 'coco', nombre: 'COCO', apodo: 'nunca sabes por dónde sale', color: '#d29a5e' },
     { id: 'canto', nombre: 'CANTO RODADO', apodo: 'va y viene', color: '#cfc9bf' },

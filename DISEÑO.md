@@ -13,7 +13,7 @@ Un juego con la lógica exacta del Pac-Man clásico (1980), ambientado en un tem
 | Puntos | Puntos blancos | **Hojuelas Inkachips** (lisas) |
 | Píldoras de poder | Puntos grandes | **Bolsas de Inkachips** (4 sabores) |
 | Frutas | Cereza, fresa… | **Productos andinos y amazónicos** |
-| Fantasmas | Blinky, Pinky, Inky, Clyde | **Fuego, El Niño, Coco, Canto rodado** |
+| Fantasmas | Blinky, Pinky, Inky, Clyde | **Golpe de Calor, El Niño, Coco, Canto rodado** |
 | Puntaje | Puntos | **Toneladas de papa frita (T)** |
 | Música | Sirena y jingles | **Los Mirlos** (o música original estilo cumbia amazónica) |
 
@@ -62,7 +62,7 @@ Una por esquina. **No parpadean** (a diferencia del original). Diseño basado en
 
 | Original | Comportamiento | Personaje | Diseño |
 |---|---|---|---|
-| **Blinky** (rojo) | Persigue directo | **Fuego** | Llama roja y anaranjada, con chispas y llamas animadas |
+| **Blinky** (rojo) | Persigue directo | **Golpe de Calor** | Llama roja y anaranjada, con chispas y llamas animadas |
 | **Pinky** (rosa) | Embosca por delante | **El Niño** | Nube de tormenta u ola con cara, gotas cayendo; "llega adelantado" |
 | **Inky** (cian) | Errático | **Coco** | Coco peludo y redondo, con el pelito agitándose |
 | **Clyde** (naranja) | Persigue y se aleja | **Canto rodado** | Piedra de río lisa y redondeada que rueda |
@@ -120,13 +120,13 @@ Los valores son los del original; solo cambia la unidad.
 - Los fantasmas deciden su dirección **una casilla antes** de llegar a cada intersección. Eligen la salida que deja su casilla objetivo a menor distancia en línea recta. En caso de empate, el orden de preferencia es arriba > izquierda > abajo > derecha. Nunca dan media vuelta por su cuenta.
 
 ### Objetivo de cada fantasma (modo persecución)
-- **Fuego (Blinky):** la casilla de Pac-Papa.
+- **Golpe de Calor (Blinky):** la casilla de Pac-Papa.
 - **El Niño (Pinky):** 4 casillas delante de Pac-Papa. *Incluye el error del original: si Pac-Papa mira hacia arriba, el objetivo queda 4 arriba y 4 a la izquierda.*
-- **Coco (Inky):** se toma el punto a 2 casillas delante de Pac-Papa (con el mismo error hacia arriba). Se traza el vector desde Fuego hasta ese punto y se duplica.
-- **Canto rodado (Clyde):** si está a más de 8 casillas de Pac-Papa, lo persigue como Fuego. Si está más cerca, va a su esquina de dispersión.
+- **Coco (Inky):** se toma el punto a 2 casillas delante de Pac-Papa (con el mismo error hacia arriba). Se traza el vector desde Golpe de Calor hasta ese punto y se duplica.
+- **Canto rodado (Clyde):** si está a más de 8 casillas de Pac-Papa, lo persigue como Golpe de Calor. Si está más cerca, va a su esquina de dispersión.
 
 ### Esquinas de dispersión
-- Fuego: arriba a la derecha.
+- Golpe de Calor: arriba a la derecha.
 - El Niño: arriba a la izquierda.
 - Coco: abajo a la derecha.
 - Canto rodado: abajo a la izquierda.
@@ -162,8 +162,8 @@ Los valores son los del original; solo cambia la unidad.
 | 5–20 | 100 % | 100 % | 95 % | 60 % | 50 % |
 | 21+ | 90 % | — | 95 % | — | 50 % |
 
-### "Cruise Elroy" (Fuego se enfurece)
-Cuando quedan pocas hojuelas, Fuego acelera en dos etapas. Desde la primera etapa, persigue a Pac-Papa incluso en modo dispersión. Los umbrales y las velocidades siguen la tabla original por nivel; en el nivel 1, la primera etapa empieza con 20 hojuelas restantes y la segunda con 10.
+### "Cruise Elroy" (Golpe de Calor se enfurece)
+Cuando quedan pocas hojuelas, Golpe de Calor acelera en dos etapas. Desde la primera etapa, persigue a Pac-Papa incluso en modo dispersión. Los umbrales y las velocidades siguen la tabla original por nivel; en el nivel 1, la primera etapa empieza con 20 hojuelas restantes y la segunda con 10.
 
 ### Salida de la casa de los fantasmas
 - El Niño sale de inmediato. Coco y Canto rodado esperan según un **contador de hojuelas comidas**:
@@ -182,9 +182,9 @@ Cuando quedan pocas hojuelas, Fuego acelera en dos etapas. Desde la primera etap
 - Se empieza con 3 vidas y hay una vida extra a las 10.000 T.
 - Al completar un nivel, el laberinto parpadea y empieza el siguiente.
 - **Intermedios** (escenas cómicas), como en el original, que se pueden saltar con un toque o una flecha:
-  - Tras el nivel 2: Fuego persigue a Pac-Papa y vuelve asustado, perseguido por un Pac-Papa gigante.
-  - Tras el nivel 5: Fuego pasa bajo la lluvia de El Niño, se apaga a medias y huye chiquito.
-  - Tras los niveles 9, 13 y 17: Fuego, convertido en brasita humeante, cruza con El Niño lloviéndole encima.
+  - Tras el nivel 2: Golpe de Calor persigue a Pac-Papa y vuelve asustado, perseguido por un Pac-Papa gigante.
+  - Tras el nivel 5: Golpe de Calor pasa bajo la lluvia de El Niño, se apaga a medias y huye chiquito.
+  - Tras los niveles 9, 13 y 17: Golpe de Calor, convertido en brasita humeante, cruza con El Niño lloviéndole encima.
 - **Pantalla de título**: logo, Pac-Papa comiendo hojuelas, presentación de los personajes uno por uno (como el original) y valores de hojuela y bolsa. Tras un GAME OVER, el juego vuelve al título a los 10 segundos.
 - La pantalla rota del nivel 256 no se replica: el juego sigue en el nivel 255 en adelante.
 

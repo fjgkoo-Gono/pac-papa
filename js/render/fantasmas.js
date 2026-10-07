@@ -1,5 +1,5 @@
 'use strict';
-// Dibujo de los fantasmas: Fuego, El Niño, Coco y Canto rodado.
+// Dibujo de los fantasmas: Golpe de Calor, El Niño, Coco y Canto rodado.
 // Todos tienen ojos que miran hacia donde avanzan, como en el original.
 (function (PP) {
   const D = PP.DIR;

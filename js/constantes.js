@@ -68,7 +68,7 @@ window.PP = window.PP || {};
   PP.parpadeosSusto = (nivel) => (PP.tiempoSusto(nivel) === 60 ? 3 : 5);
   PP.CUADROS_PARPADEO = 14;
 
-  // "Cruise Elroy": Fuego acelera cuando quedan pocas hojuelas.
+  // "Cruise Elroy": Golpe de Calor acelera cuando quedan pocas hojuelas.
   // d1/d2: hojuelas restantes para cada etapa; v1/v2: velocidad.
   PP.elroy = function (nivel) {
     const t = (d1, v1, v2) => ({ d1, v1, d2: d1 / 2, v2 });

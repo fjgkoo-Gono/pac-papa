@@ -28,7 +28,7 @@
   const SIN_SUBIR = new Set(['12,11', '15,11', '12,23', '15,23']);
 
   PP.DEFINICION_FANTASMAS = [
-    { id: 'fuego', nombre: 'Fuego', esquina: { x: 25, y: -3 }, inicio: { x: PUERTA_X, y: AFUERA_Y, dir: D.LEFT, estado: 'afuera' } },
+    { id: 'fuego', nombre: 'Golpe de Calor', esquina: { x: 25, y: -3 }, inicio: { x: PUERTA_X, y: AFUERA_Y, dir: D.LEFT, estado: 'afuera' } },
     { id: 'nino', nombre: 'El Niño', esquina: { x: 2, y: -3 }, inicio: { x: PUERTA_X, y: CASA_Y, dir: D.DOWN, estado: 'casa' } },
     { id: 'coco', nombre: 'Coco', esquina: { x: 27, y: 32 }, inicio: { x: PUERTA_X - 2 * T, y: CASA_Y, dir: D.UP, estado: 'casa' } },
     { id: 'canto', nombre: 'Canto rodado', esquina: { x: 0, y: 32 }, inicio: { x: PUERTA_X + 2 * T, y: CASA_Y, dir: D.UP, estado: 'casa' } },
