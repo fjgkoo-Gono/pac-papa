@@ -44,8 +44,11 @@ window.PP = window.PP || {};
   };
 
   // Velocidades por nivel, en fracción de la velocidad máxima.
+  // Único cambio respecto al original: en el nivel 1 los fantasmas van
+  // un poco más lentos (65 % en vez de 75 %, 35 % en el túnel en vez
+  // de 40 %) para empezar más fácil. Desde el nivel 2, todo es original.
   PP.velocidades = function (nivel) {
-    if (nivel === 1) return { pac: 0.80, pacAsustando: 0.90, fantasma: 0.75, fantasmaAsustado: 0.50, tunel: 0.40 };
+    if (nivel === 1) return { pac: 0.80, pacAsustando: 0.90, fantasma: 0.65, fantasmaAsustado: 0.50, tunel: 0.35 };
     if (nivel <= 4) return { pac: 0.90, pacAsustando: 0.95, fantasma: 0.85, fantasmaAsustado: 0.55, tunel: 0.45 };
     if (nivel <= 20) return { pac: 1.00, pacAsustando: 1.00, fantasma: 0.95, fantasmaAsustado: 0.60, tunel: 0.50 };
     return { pac: 0.90, pacAsustando: 0.90, fantasma: 0.95, fantasmaAsustado: 0.95, tunel: 0.50 };
@@ -72,7 +75,7 @@ window.PP = window.PP || {};
   // d1/d2: hojuelas restantes para cada etapa; v1/v2: velocidad.
   PP.elroy = function (nivel) {
     const t = (d1, v1, v2) => ({ d1, v1, d2: d1 / 2, v2 });
-    if (nivel === 1) return t(20, 0.80, 0.85);
+    if (nivel === 1) return t(20, 0.70, 0.75);   // original: 0.80 y 0.85 (ver velocidades)
     if (nivel === 2) return t(30, 0.90, 0.95);
     if (nivel <= 4) return t(40, 0.90, 0.95);
     if (nivel === 5) return t(40, 1.00, 1.05);

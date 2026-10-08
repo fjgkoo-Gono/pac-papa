@@ -155,15 +155,17 @@ Los valores son los del original; solo cambia la unidad.
 
 ### Velocidades (porcentaje de la velocidad máxima)
 
+**Cambio respecto al original:** en el nivel 1 los fantasmas van un poco más lentos, para empezar más fácil. Desde el nivel 2 todo es igual al original.
+
 | Nivel | Pac-Papa | Pac-Papa asustando | Fantasmas | Fantasmas asustados | Fantasmas en túnel |
 |---|---|---|---|---|---|
-| 1 | 80 % | 90 % | 75 % | 50 % | 40 % |
+| 1 | 80 % | 90 % | **65 %** (original: 75 %) | 50 % | **35 %** (original: 40 %) |
 | 2–4 | 90 % | 95 % | 85 % | 55 % | 45 % |
 | 5–20 | 100 % | 100 % | 95 % | 60 % | 50 % |
 | 21+ | 90 % | — | 95 % | — | 50 % |
 
 ### "Cruise Elroy" (Golpe de Calor se enfurece)
-Cuando quedan pocas hojuelas, Golpe de Calor acelera en dos etapas. Desde la primera etapa, persigue a Pac-Papa incluso en modo dispersión. Los umbrales y las velocidades siguen la tabla original por nivel; en el nivel 1, la primera etapa empieza con 20 hojuelas restantes y la segunda con 10.
+Cuando quedan pocas hojuelas, Golpe de Calor acelera en dos etapas. Desde la primera etapa, persigue a Pac-Papa incluso en modo dispersión. Los umbrales y las velocidades siguen la tabla original por nivel; en el nivel 1, la primera etapa empieza con 20 hojuelas restantes y la segunda con 10, a 70 % y 75 % (original: 80 % y 85 %).
 
 ### Salida de la casa de los fantasmas
 - El Niño sale de inmediato. Coco y Canto rodado esperan según un **contador de hojuelas comidas**:
